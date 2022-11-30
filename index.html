@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <nav class="navbar">
+        <div class="drop-menu">
+          <div class="drop-trigger">File</div>
+          <ul class="drop-body">
+            <li>New</li>
+            <li>Save</li>
+            <li>Import image</li>
+            <li>Print</li>
+            <li>About</li>
+          </ul>
+        </div>
+        <div class="drop-menu">
+          <div class="drop-trigger">View</div>
+          <ul class="drop-body">
+            <li>
+              <span>View grids</span> <input type="checkbox" name="" id="" />
+            </li>
+            <li>Zoom in</li>
+            <li>Zoom out</li>
+            <li>Full screen</li>
+            <li>Tools bar</li>
+          </ul>
+        </div>
+      </nav> -->
+    <section class="tool-options">
+      <div class="drop-menu">
+        <div class="drop-trigger">File</div>
+        <ul class="drop-body">
+          <li id="new">New</li>
+          <li id="save">Save</li>
+          <li>
+            <label for="import" id="importLabel">Import image</label>
+            <input type="file" id="import" style="display: none" />
+          </li>
+          <li id="print">Print</li>
+          <li id="about">About</li>
+        </ul>
+      </div>
+      <div class="pen option">
+        <div class="prop">
+          <label for="size">Stroke Size</label>
+          <input type="number" name="" id="size" min="1" max="10" value="1" />
+        </div>
+        <div class="prop">
+          <label for="opacity">Opacity</label>
+          <input
+            type="number"
+            name=""
+            id="opacity"
+            min="0.1"
+            max="1"
+            value="1"
+            step="0.1"
+          />
+        </div>
+      </div>
+      <div class="brush option">
+        <div class="prop">
+          <label for="size">Stroke Size</label>
+          <input type="number" name="" id="size" min="0" max="10" value="3" />
+        </div>
+        <div class="prop">
+          <label for="radius">Radius</label>
+          <input
+            type="number"
+            name=""
+            id="radius"
+            min="1"
+            max="50"
+            value="30"
+          />
+        </div>
+        <div class="prop">
+          <label for="opacity">Opacity</label>
+          <input
+            type="number"
+            name=""
+            id="opacity"
+            min="0.1"
+            max="1"
+            value="1"
+            step="0.1"
+          />
+        </div>
+        <div class="brush-selections">
+          <div>
+            <img
+              class="selection active"
+              id="brush1"
+              src="./assets//brush1.svg"
+              alt="Brush 1"
+            />
+          </div>
+          <div>
+            <img
+              class="selection"
+              id="brush2"
+              src="./assets//brush2.png"
+              alt="Brush 2"
+            />
+          </div>
+          <div>
+            <img
+              class="selection"
+              id="brush3"
+              src="./assets//brush3.png"
+              alt="Brush 3"
+            />
+          </div>
+          <div>
+            <img
+              class="selection"
+              id="brush4"
+              src="./assets//brush4.png"
+              alt="Brush 4"
+            />
+          </div>
+          <div>
+            <img
+              class="selection"
+              id="brush5"
+              src="./assets//brush5.png"
+              alt="Brush 5"
+            />
+          </div>
+          <!-- <div class="selection" >
+            <img src="./assets/brush6.svg" alt="" />
+          </div> -->
+        </div>
+      </div>
+      <div class="text option">
+        <div class="prop">
+          <label for="size">Size</label>
+          <input type="number" id="size" min="8" max="96" value="24" step="2" />
+        </div>
+        <div class="prop">
+          <label for="weight">Weight</label>
+          <input
+            type="number"
+            id="weight"
+            min="100"
+            max="900"
+            value="500"
+            step="100"
+          />
+        </div>
+        <div class="prop">
+          <label for="height">Line height</label>
+          <input
+            type="number"
+            id="height"
+            min="1"
+            max="3"
+            value="1.5"
+            step="0.5"
+          />
+        </div>
+        <select id="family">
+          <option value="verdana" selected>Verdana</option>
+          <option value="cursive">Cursive</option>
+          <option value="monospace">Monospace</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="emoji">Emoji</option>
+          <option value="sans-serif">Sans-serif</option>
+        </select>
+      </div>
+      <div class="shapes option">
+        <div class="prop">
+          <label for="size">Stroke Size</label>
+          <input type="number" id="size" min="1" max="30" value="5" />
+        </div>
+        <div class="prop">
+          <label for="opacity">Opacity</label>
+          <input
+            type="number"
+            name=""
+            id="opacity"
+            min="0.1"
+            max="1"
+            value="1"
+            step="0.1"
+          />
+        </div>
+        <div class="prop">
+          <input type="checkbox" id="fill" />
+          <label for="fill" class="check">Fill</label>
+        </div>
+
+        <div><span>Shapes</span></div>
+        <div class="shapes-icons">
+          <div class="prop shape active">
+            <img
+              src="./assets//rectangle-shape.svg"
+              alt="rectangle"
+              id="rectangle"
+            />
+          </div>
+          <div class="prop shape">
+            <img src="./assets//circle-shape.svg" alt="circle" id="circle" />
+          </div>
+          <div class="prop shape">
+            <img
+              src="./assets//triangle-shape.svg"
+              alt="triangle"
+              id="triangle"
+            />
+          </div>
+          <!-- <div class="prop shape" id="star">star</div> -->
+        </div>
+      </div>
+      <div class="filter option">
+        <div class="prop">
+          <label for="blur">Blur</label>
+          <input type="range" id="blur" min="1" />
+        </div>
+      </div>
+    </section>
+    <div class="board">
+      <canvas id="canvas"></canvas>
+      <textarea id="text"></textarea>
+    </div>
+    <aside class="tools">
+      <ul>
+        <li class="tool active" data-tool="pen" title="Pen">
+          <img class="icon" src="./assets/pen-icon.svg" alt="Pen" />
+        </li>
+        <li class="tool" data-tool="brush" title="Brush">
+          <img class="icon" src="./assets/brush-icon.svg" alt="brush" />
+        </li>
+        <li class="tool" data-tool="shapes" title="Shapes">
+          <img class="icon" src="./assets/shapes-icon.svg" alt="brush" />
+        </li>
+        <!-- <li class="tool" data-tool="eraser" title="Eraser">
+          <i class="fa-solid fa-eraser"></i>
+        </li> -->
+        <li class="tool" data-tool="text"><i class="fa-solid fa-t"></i></li>
+        <!-- <li class="tool" data-tool="filter">Filters</li> -->
+
+        <li class="tool" data-tool="colors">
+          <label for="color-1" id="label-1">
+            <input type="color" class="color" id="color-1" />
+          </label>
+          <label for="color-2" id="label-2">
+            <input type="color" class="color" id="color-2" />
+          </label>
+          <img class="icon swap" src="./assets/swap-icon.svg" alt="swap" />
+        </li>
+      </ul>
+    </aside>
+    <script src="./script.js"></script>
+  </body>
+</html>
