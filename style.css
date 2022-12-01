@@ -7,7 +7,7 @@ ul {
   list-style: none;
 }
 :root {
-  --color-dark: rgb(9, 2, 39);
+  --color-dark: rgb(15, 15, 15);
 }
 body {
   font-family: verdana, sans-serif;
